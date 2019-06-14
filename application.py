@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route("/")
 @app.route("/categories")
 def showCategories():
-    return "This page will show all my categories and home page"
+    return render_template("categories.html")
 
 
 @app.route("/category/<int:category_id>/")
